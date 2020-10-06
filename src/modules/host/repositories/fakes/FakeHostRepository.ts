@@ -31,4 +31,10 @@ export class FakeHostRepository implements IHostRepository {
 
     return host;
   }
+
+  public async findByEmail(email: string): Promise<Host | undefined> {
+    const foundHosts = this.hosts.find(host => host.email === email);
+
+    return foundHosts;
+  }
 }
