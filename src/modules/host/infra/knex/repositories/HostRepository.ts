@@ -1,5 +1,3 @@
-import knex from '@shared/domain/database';
-
 import { IHostRepository } from '@modules/host/repositories/IHostRepository';
 import { ICreateHostDTO } from '@modules/host/dtos/ICreateHostDTO';
 import { Host } from '../entities/Host';
