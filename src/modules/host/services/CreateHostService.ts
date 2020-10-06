@@ -5,15 +5,18 @@ interface Request {
   name: string;
   email: string;
   password: string;
-  host_verify: boolean;
-  host_type: boolean;
-  stars: number;
 }
 
 export class CreateHostService {
-  private hostsRepository: IHostRepository;
+  constructor(private hostsRepository: IHostRepository) {}
 
-  constructor() {}
+  public async execute({ name, email, password }: Request): Promise<Host> {
+    const host = await this.hostsRepository.create({
+      name,
+      email,
+      password,
+    });
 
-  public async execute(): Promise<void> {}
+    return host;
+  }
 }
