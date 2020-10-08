@@ -1,7 +1,5 @@
-// Anfritião pode ter nome, email, senha, perfil verificado, tipo de host, avaliações(estrelas)
-
 export class Host {
-  id: string;
+  readonly id: string;
 
   name: string;
 

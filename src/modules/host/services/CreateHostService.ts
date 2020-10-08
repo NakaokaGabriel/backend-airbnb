@@ -7,12 +7,22 @@ interface Request {
   name: string;
   email: string;
   password: string;
+  host_verify?: boolean;
+  host_type?: boolean;
+  stars?: number;
 }
 
 export class CreateHostService {
   constructor(private hostsRepository: IHostRepository) {}
 
-  public async execute({ name, email, password }: Request): Promise<Host> {
+  public async execute({
+    name,
+    email,
+    password,
+    host_verify = false,
+    host_type = false,
+    stars = 0,
+  }: Request): Promise<Host> {
     const sameHost = await this.hostsRepository.findByEmail(email);
 
     if (sameHost) {
@@ -23,6 +33,9 @@ export class CreateHostService {
       name,
       email,
       password,
+      host_verify,
+      host_type,
+      stars,
     });
 
     return host;
