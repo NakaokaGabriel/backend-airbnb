@@ -26,7 +26,7 @@ export class CreateHostService {
     const sameHost = await this.hostsRepository.findByEmail(email);
 
     if (sameHost) {
-      throw new AppError('This user already exist', 402);
+      throw new AppError('This user already exist', 400);
     }
 
     const host = await this.hostsRepository.create({

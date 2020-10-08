@@ -16,19 +16,12 @@ module.exports = {
       'src',
       'shared',
       'infra',
-      'database',
+      'knex',
       'migrations',
     ),
   },
   seeds: {
     tableName: 'seeders',
-    directory: resolve(
-      __dirname,
-      'src',
-      'shared',
-      'infra',
-      'database',
-      'seeds',
-    ),
+    directory: resolve(__dirname, 'src', 'shared', 'infra', 'knex', 'seeds'),
   },
 };
