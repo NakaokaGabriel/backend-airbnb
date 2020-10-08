@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import hostRouter from '@modules/host/infra/http/routes/host.routes';
+
 const routes = Router();
 
-routes.get('/', (request, response) => {
-  return response.send('<h1>Hello world</h1>');
-});
+routes.use('/hosts', hostRouter);
 
 export default routes;
