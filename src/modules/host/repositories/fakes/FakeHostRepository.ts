@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-import { Host } from '../../infra/knex/entities/Host';
+import { Host } from '../../infra/database/entities/Host';
 import { IHostRepository } from '../IHostRepository';
 import { ICreateHostDTO } from '../../dtos/ICreateHostDTO';
 

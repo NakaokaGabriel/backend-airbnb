@@ -6,15 +6,12 @@
   "scripts": {
     "build": "tsc",
     "dev:server": "tsnd -r tsconfig-paths/register --clear --no-notify --ignore-watch node_modules --transpile-only ./src/shared/infra/http/server.ts",
-    "knex": "tsnd ./node_modules/knex/bin/cli.js",
     "test": "jest"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
-    "knex": "^0.21.6",
-    "pg": "^8.3.3",
     "uuid": "^8.3.1"
   },
   "devDependencies": {

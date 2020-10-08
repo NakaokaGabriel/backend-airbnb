@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import { CreateHostService } from '@modules/host/services/CreateHostService';
 
-import { HostRepositories } from '@modules/host/infra/knex/repositories/HostRepository';
+import { HostRepositories } from '@modules/host/infra/database/repositories/HostRepository';
 
 class HostControllers {
   public async store(request: Request, response: Response): Promise<Response> {

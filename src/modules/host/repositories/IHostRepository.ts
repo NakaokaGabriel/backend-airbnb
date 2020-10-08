@@ -1,4 +1,4 @@
-import { Host } from '../infra/knex/entities/Host';
+import { Host } from '../infra/database/entities/Host';
 
 import { ICreateHostDTO } from '../dtos/ICreateHostDTO';
 
