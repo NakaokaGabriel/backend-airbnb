@@ -17,7 +17,7 @@ class HostControllers {
       password,
     });
 
-    return response.json(200).json(hosts);
+    return response.status(202).json(hosts);
   }
 }
 
