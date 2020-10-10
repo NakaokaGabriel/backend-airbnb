@@ -4,6 +4,6 @@ import HostControllers from '../controllers/HostControllers';
 
 const routes = Router();
 
-routes.post('', HostControllers.store);
+routes.post('', HostControllers.create);
 
 export default routes;
