@@ -1,3 +1,5 @@
+import { inject, injectable } from 'tsyringe';
+
 import { AppError } from '@shared/errors/AppError';
 
 import { Host } from '../infra/database/entities/Host';
@@ -12,8 +14,12 @@ interface Request {
   stars?: number;
 }
 
+@injectable()
 export class CreateHostService {
-  constructor(private hostsRepository: IHostRepository) {}
+  constructor(
+    @inject('HostRepository')
+    private hostsRepository: IHostRepository,
+  ) {}
 
   public async execute({
     name,

@@ -1,15 +1,13 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 import { CreateHostService } from '@modules/host/services/CreateHostService';
 
-import { HostRepositories } from '@modules/host/infra/database/repositories/HostRepository';
-
 class HostControllers {
-  public async store(request: Request, response: Response): Promise<Response> {
+  public async create(request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body;
 
-    const hostRepository = new HostRepositories();
-    const createHostService = new CreateHostService(hostRepository);
+    const createHostService = container.resolve(CreateHostService);
 
     const hosts = await createHostService.execute({
       name,

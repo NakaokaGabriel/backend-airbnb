@@ -5,7 +5,7 @@ import { ICreateHostDTO } from '@modules/host/dtos/ICreateHostDTO';
 
 import { Host } from '../entities/Host';
 
-export class HostRepositories implements IHostRepository {
+export class HostRepository implements IHostRepository {
   private ormRepository: Repository<Host>;
 
   constructor() {
