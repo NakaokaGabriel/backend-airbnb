@@ -2,6 +2,8 @@ import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '@shared/errors/AppError';
 
+import { IHashRepository } from '@shared/containers/providers/hash/repository/IHashRepository';
+
 import { Host } from '../infra/database/entities/Host';
 import { IHostRepository } from '../repositories/IHostRepository';
 
@@ -19,6 +21,9 @@ export class CreateHostService {
   constructor(
     @inject('HostRepository')
     private hostsRepository: IHostRepository,
+
+    @inject('HashRepository')
+    private hashRepository: IHashRepository,
   ) {}
 
   public async execute({
@@ -35,10 +40,12 @@ export class CreateHostService {
       throw new AppError('This user already exist');
     }
 
+    const passwordHash = await this.hashRepository.generateHash(password);
+
     const host = await this.hostsRepository.create({
       name,
       email,
-      password,
+      password: passwordHash,
       host_verify,
       host_type,
       stars,
