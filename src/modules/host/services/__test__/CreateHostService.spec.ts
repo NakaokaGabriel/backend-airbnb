@@ -1,16 +1,20 @@
 import { AppError } from '@shared/errors/AppError';
 
+import { FakeHash } from '@shared/containers/providers/hash/fakes/FakeHash';
 import { CreateHostService } from '../CreateHostService';
 import { FakeHostRepository } from '../../repositories/fakes/FakeHostRepository';
 
-let fakeHostRepository: FakeHostRepository;
 let createHostService: CreateHostService;
+
+let fakeHostRepository: FakeHostRepository;
+let fakeHash: FakeHash;
 
 describe('CreateHosts', () => {
   beforeEach(() => {
     fakeHostRepository = new FakeHostRepository();
+    fakeHash = new FakeHash();
 
-    createHostService = new CreateHostService(fakeHostRepository);
+    createHostService = new CreateHostService(fakeHostRepository, fakeHash);
   });
 
   it('should be able create hosts', async () => {
