@@ -1,4 +1,4 @@
-import { User } from '../infra/database/entities/User';
+import { User } from '../infra/database/typeorm/entities/User';
 
 import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
 

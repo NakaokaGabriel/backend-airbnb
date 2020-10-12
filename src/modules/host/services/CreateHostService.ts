@@ -4,7 +4,7 @@ import { AppError } from '@shared/errors/AppError';
 
 import { IHashRepository } from '@shared/containers/providers/hash/repository/IHashRepository';
 
-import { Host } from '../infra/database/entities/Host';
+import { Host } from '../infra/database/typeorm/entities/Host';
 import { IHostRepository } from '../repositories/IHostRepository';
 
 interface Request {

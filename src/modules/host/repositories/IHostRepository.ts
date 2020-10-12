@@ -1,4 +1,4 @@
-import { Host } from '../infra/database/entities/Host';
+import { Host } from '../infra/database/typeorm/entities/Host';
 
 import { ICreateHostDTO } from '../dtos/ICreateHostDTO';
 
