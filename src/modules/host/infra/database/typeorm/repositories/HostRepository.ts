@@ -13,7 +13,7 @@ export class HostRepository implements IHostRepository {
   }
 
   public async create(data: ICreateHostDTO): Promise<Host> {
-    const host = await this.ormRepository.create(data);
+    const host = this.ormRepository.create(data);
 
     await this.ormRepository.save(host);
 
