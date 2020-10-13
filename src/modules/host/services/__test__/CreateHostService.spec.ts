@@ -1,13 +1,13 @@
 import { AppError } from '@shared/errors/AppError';
 
 import { FakeHash } from '@shared/containers/providers/hash/fakes/FakeHash';
-import { CreateHostService } from '../CreateHostService';
 import { FakeHostRepository } from '../../repositories/fakes/FakeHostRepository';
-
-let createHostService: CreateHostService;
+import { CreateHostService } from '../CreateHostService';
 
 let fakeHostRepository: FakeHostRepository;
 let fakeHash: FakeHash;
+
+let createHostService: CreateHostService;
 
 describe('CreateHosts', () => {
   beforeEach(() => {
@@ -30,10 +30,13 @@ describe('CreateHosts', () => {
   });
 
   it('should not be able create a host with the same email', async () => {
-    await createHostService.execute({
+    await fakeHostRepository.create({
       name: 'test',
       email: 'test@hotmail.com',
       password: '123456',
+      host_type: true,
+      host_verify: true,
+      stars: 2,
     });
 
     await expect(

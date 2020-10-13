@@ -17,7 +17,7 @@ interface Request {
 }
 
 @injectable()
-class CreateHostService {
+export class CreateHostService {
   constructor(
     @inject('HostRepository')
     private hostsRepository: IHostRepository,
@@ -54,5 +54,3 @@ class CreateHostService {
     return host;
   }
 }
-
-export { CreateHostService };
