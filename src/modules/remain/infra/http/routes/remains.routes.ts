@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import RemainController from '../controllers/RemainController';
+import CountryRemainController from '../controllers/CountryRemainController';
 
 const routes = Router();
 
-routes.get('', RemainController.index);
+routes.get('/country', CountryRemainController.index);
 
 export default routes;

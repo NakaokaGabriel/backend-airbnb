@@ -11,8 +11,8 @@ export class Remain {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
-  image_url: string;
+  // @Column()
+  // image_url: string;
 
   @Column()
   title: string;
